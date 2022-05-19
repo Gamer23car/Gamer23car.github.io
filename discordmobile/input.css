@@ -14,9 +14,7 @@ textarea {
   box-shadow:4px 4px 10px rgba(0,0,0,0.06);
   height:150px;
 }
-nbutton {
-  appearance:none;
-  -webkit-appearance:none;
+button {
   padding:40px;
   border:none;
   background-color:#383838;
