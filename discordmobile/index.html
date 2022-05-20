@@ -3,6 +3,7 @@
 <html>
     <head>
         <title>MP3 Player</title>
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/488701852058386433/975522972880220180/unknown.png">
         <script type = "text/javascript">
         function mp3()
@@ -15,8 +16,17 @@
            audio.load();
            audio.play();
         }
+        function loop() 
+        {
+            var audio = document.getElementById("MP3");
+            if (audio.loop == false) 
+            {audio.loop = true}
+            else 
+            {audio.loop = false};
+        }
         </script>
     </head>
+    playlist()
     <body style="background-color: #212121;">
         <input type="text" id="InputMP3" placeholder="Enter MP3 link"> <br>
         <audio id="MP3" controls autoplay loop>
@@ -25,6 +35,8 @@
         </audio> <br>
         <button class="button button1" onclick="mp3()" id = "mp3">MP3</button> <br>
         <input type="checkbox" id="playlist" name="playlist" value="Playlist">
-        <label for="playlist">Use playlist.</label>
+        <label for="playlist">Use playlist.</label><br>
+        <input type="checkbox" id="loop" name="loop" value="Loop" onclick="loop()">
+        <label for="loop">Loop audio.</label><br>
     </body>
 </html>
