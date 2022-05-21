@@ -40,7 +40,7 @@
               audio.addEventListener("ended", function(){
                    audio.currentTime = 0;
                    console.log("ended");
-                   if (list == true)
+                   if (list == true) {
                    str = str.split(',');
                    var length = str.length;
                        if (length <= currentSong) {
@@ -51,6 +51,7 @@
                            {
                        else
                        {currentSong = 0};
+                  }
                });
             };
         </script>
