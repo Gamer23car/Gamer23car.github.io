@@ -6,33 +6,52 @@
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/488701852058386433/975522972880220180/unknown.png">
         <script type = "text/javascript">
-        var list = false;
-        function mp3()
-        {
-           var str = document.getElementById("InputMP3").value;
-           var audio = document.getElementById("MP3");
-           var source = document.getElementById("source");
-           
-           source.src = str
-           audio.load();
-           audio.play();
-        }
-        function loop() 
-        {
-            var audio = document.getElementById("MP3");
-            if (audio.loop == false) 
-            {audio.loop = true}
-            else 
-            {audio.loop = false};
-        }
-        window.onload=function(){
-          var audio = document.getElementById("MP3");    
-          audio.addEventListener("ended", function(){
-               audio.currentTime = 0;
-               console.log("ended");
-           });
-        };
-        console.log(list)
+            var list = false;
+            var currentSong = 0;
+            function mp3()
+            {
+               var str = document.getElementById("InputMP3").value;
+               var audio = document.getElementById("MP3");
+               var source = document.getElementById("source");
+
+               source.src = str
+               audio.load();
+               audio.play();
+            }
+            function loop() 
+            {
+                var audio = document.getElementById("MP3");
+                if (audio.loop == false) 
+                {audio.loop = true}
+                else 
+                {audio.loop = false};
+            }
+            function playlist()
+            {
+                if (list == false)
+                {list = true}
+                else
+                {list = false};
+            }
+            window.onload=function(){
+              var audio = document.getElementById("MP3");
+              var str = document.getElementById("InputMP3").value;
+              var source = document.getElementById("source");
+              audio.addEventListener("ended", function(){
+                   audio.currentTime = 0;
+                   console.log("ended");
+                   if (list == true)
+                   str = str.split(',');
+                   var length = str.length;
+                   if (length <= currentSong)
+                      source.scr = str[0]
+                      audio.load();
+                      audio.play();
+                      currentSong = currentSong+=1
+                   else
+                      currentSong = 0
+               });
+            };
         </script>
     </head>
     made by gamer23car
