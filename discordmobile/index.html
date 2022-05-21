@@ -45,16 +45,13 @@
             window.onload=function(){
               var audio = document.getElementById("MP3");
               var str = document.getElementById("InputMP3").value;
-              str = String(str);
-              console.log(str);
+              str = str.toString();
               var source = document.getElementById("source");
               audio.addEventListener("ended", function(){
                    console.log(str);
                    audio.currentTime = 0;
                    if (list == true) {
                        var table = str.split(",");
-                       console.log(str.split(","));
-                       console.log(table)
                        var length = table.length;
                            console.log(length);
                            if (length >= currentSong) {
