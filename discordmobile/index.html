@@ -44,12 +44,13 @@
             window.onload=function(){
               var audio = document.getElementById("MP3");
               var str = document.getElementById("InputMP3").value;
-              console.log(str);
               var source = document.getElementById("source");
               audio.addEventListener("ended", function(){
+                   console.log(str);
                    audio.currentTime = 0;
                    if (list == true) {
                        var table = str.split(",");
+                       console.log(str.split(","));
                        console.log(table)
                        var length = table.length;
                            console.log(length);
