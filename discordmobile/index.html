@@ -49,13 +49,12 @@
               audio.addEventListener("ended", function(){
                    audio.currentTime = 0;
                    if (list == true) {
-                   const table = str.split(",");
-                   console.log(str);
+                   let table = str.split(",");
                    var length = table.length;
                        console.log(length);
                        if (length >= currentSong) {
-                          source.src = str[currentSong];
-                          console.log(str[currentSong]);
+                          source.src = table[currentSong];
+                          console.log(table[currentSong]);
                           audio.load();
                           audio.play();
                           currentSong = currentSong+=1
