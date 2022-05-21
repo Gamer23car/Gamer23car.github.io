@@ -43,13 +43,13 @@
                    if (list == true)
                    str = str.split(',');
                    var length = str.length;
-                   if (length <= currentSong)
-                      source.scr = str[0]
-                      audio.load();
-                      audio.play();
-                   {currentSong = currentSong+=1}
-                   else
-                   {currentSong = 0;}
+                       if (length <= currentSong)
+                          source.scr = str[0]
+                          audio.load();
+                          audio.play();
+                       {currentSong = currentSong+=1}
+                       else
+                       {currentSong = 0;}
                });
             };
         </script>
