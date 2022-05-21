@@ -24,11 +24,13 @@
             else 
             {audio.loop = false};
         }
-        var audio = document.getElementById("MP3");    
-        audio.addEventListener("ended", function(){
-            audio.currentTime = 0;
-            console.log("ended");
-        });
+        window.onload=function(){
+          var audio = document.getElementById("MP3");    
+            audio.addEventListener("ended", function(){
+                audio.currentTime = 0;
+                console.log("ended");
+            });
+        };
         </script>
     </head>
     made by gamer23car
