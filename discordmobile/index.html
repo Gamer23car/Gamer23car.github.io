@@ -52,12 +52,12 @@
                    console.log(currentSong);
                    if (list == true) {
                    str = toString(str);
-                   var table = str.split(',');
+                   const table = str.split(',');
                    console.log(str);
                    var length = table.length;
                        console.log(length);
                        if (length >= currentSong) {
-                          source.src = str[currentSong]
+                          source.src = str[currentSong];
                           console.log(str[currentSong]);
                           audio.load();
                           audio.play();
