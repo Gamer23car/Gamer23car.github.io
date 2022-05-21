@@ -49,19 +49,20 @@
               audio.addEventListener("ended", function(){
                    audio.currentTime = 0;
                    if (list == true) {
-                   let table = str.split(",");
-                   var length = table.length;
-                       console.log(length);
-                       if (length >= currentSong) {
-                          source.src = table[currentSong];
-                          console.log(table[currentSong]);
-                          audio.load();
-                          audio.play();
-                          currentSong = currentSong+=1
-                       }
-                       else
-                       {currentSong = 0};
-                  }
+                       var table = str.split(",");
+                       console.log(table)
+                       var length = table.length;
+                           console.log(length);
+                           if (length >= currentSong) {
+                              source.src = table[currentSong];
+                              console.log(table[currentSong]);
+                              audio.load();
+                              audio.play();
+                              currentSong = currentSong+=1
+                           }
+                           else
+                           {currentSong = 0};
+                      }
                   else
                   {
                     str = str.split(',');
