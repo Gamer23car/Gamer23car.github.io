@@ -45,6 +45,7 @@
             window.onload=function(){
               var audio = document.getElementById("MP3");
               var str = document.getElementById("InputMP3").value;
+              str = String(str);
               var source = document.getElementById("source");
               audio.addEventListener("ended", function(){
                    console.log(str);
