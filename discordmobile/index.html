@@ -53,13 +53,21 @@
                    str = str.split(',');
                    var length = str.length;
                        if (length <= currentSong) {
-                          source.src = str[0]
+                          source.src = str[currentSong]
                           audio.load();
                           audio.play();
                           currentSong = currentSong+=1
                        }
                        else
                        {currentSong = 0};
+                  }
+                  else
+                  {
+                    str = toString(str);
+                    str = str.split(',');
+                    source.src = str[0]
+                    audio.load();
+                    audio.play();
                   }
                });
             };
