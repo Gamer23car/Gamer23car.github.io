@@ -6,7 +6,6 @@
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <meta property="og:image" content="https://cdn.discordapp.com/attachments/488701852058386433/975522972880220180/unknown.png">
         <script type = "text/javascript">
-        var audio = document.getElementById("MP3");
         function mp3()
         {
            var str = document.getElementById("InputMP3").value;
@@ -25,6 +24,7 @@
             else 
             {audio.loop = false};
         }
+        var audio = document.getElementById("MP3");    
         audio.addEventListener("ended", function(){
             audio.currentTime = 0;
             console.log("ended");
