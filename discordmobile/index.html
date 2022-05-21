@@ -13,10 +13,18 @@
                var str = document.getElementById("InputMP3").value;
                var audio = document.getElementById("MP3");
                var source = document.getElementById("source");
-
-               source.src = str
-               audio.load();
-               audio.play();
+               
+               if (list == true) {
+                    source.src = "https://cdn.discordapp.com/attachments/884033642333102161/977599742534111272/silent.mp3"
+                    audio.load();
+                    audio.play();
+               }
+               else
+               {
+                   source.src = str
+                   audio.load();
+                   audio.play();
+               }
             }
             function loop() 
             {
@@ -44,7 +52,7 @@
                    str = str.split(',');
                    var length = str.length;
                        if (length <= currentSong) {
-                          source.scr = str[0]
+                          source.src = str[0]
                           audio.load();
                           audio.play();
                           currentSong = currentSong+=1
