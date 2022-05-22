@@ -8,10 +8,14 @@
         <script type = "text/javascript">
             var list = false;
             var currentSong = 0;
+            var shuffl = false;
+            var randomSong = 0;
             function mp3()
             {
                var str = document.getElementById("InputMP3").value;
                currentSong = 0;
+               randomSong = 0;
+               played = new Array();
                var audio = document.getElementById("MP3");
                var source = document.getElementById("source");
                
@@ -27,6 +31,11 @@
                    audio.play();
                }
             }
+            function getRandomInt(min, max) {
+                    min = Math.ceil(min);
+                    max = Math.floor(max);
+                    return Math.floor(Math.random() * (max - min + 1) + min);
+            }
             function loop() 
             {
                 var audio = document.getElementById("MP3");
@@ -34,6 +43,13 @@
                 {audio.loop = true}
                 else 
                 {audio.loop = false};
+            }
+            function shuffle()
+            {
+                if (shuffl == false)
+                {shuffl = true}
+                else
+                {shuffl = false};
             }
             function playlist()
             {
@@ -56,14 +72,29 @@
                    if (list == true) {
                        var table = splitPlaylist(str);
                        var length = table.length;
-                           if (length >= currentSong) {
-                              source.src = table[currentSong];
-                              audio.load();
-                              audio.play();
-                              currentSong = currentSong+=1
+                           if (shuffle == true) {
+                               randomSong = getRandomInt(0, length)
+                               //played[randomSong] = true;
+                               source.src = table[randomSong];
+                               audio.load();
+                               audio.play();
                            }
-                           else
-                           {currentSong = 0};
+                           else {
+                               if (length >= currentSong) {
+                                  source.src = table[currentSong];
+                                  audio.load();
+                                  audio.play();
+                                  currentSong = currentSong+=1
+                               }
+                               else
+                               {
+                                   currentSong = 0
+                                   source.src = table[currentSong];
+                                   audio.load();
+                                   audio.play();
+                                   currentSong = currentSong+=1
+                               };
+                           }
                       }
                   else
                   {
@@ -86,6 +117,8 @@
         <button class="button button1" onclick="mp3()" id = "mp3">MP3</button> <br>
         <input type="checkbox" id="playlist" name="playlist" value="Playlist" onclick="playlist()">
         <label for="playlist">Use playlist.</label><br>
+        <input type="checkbox" id="shuffle" name="shuffle" value="Shuffle" onclick="shuffle()">
+        <label for="playlist">Shuffle playlist (while playing).</label><br>
         <input type="checkbox" id="loop" name="loop" value="Loop" onclick="loop()">
         <label for="loop">Loop audio.</label><br>
     </body>
