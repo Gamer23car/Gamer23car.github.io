@@ -49,7 +49,7 @@
             console.log(splitPlaylist("e,e,e,"));
             window.onload=function(){
               var audio = document.getElementById("MP3");
-              var str = document.getElementById("InputMP3").value;
+              var str = document.getElementById("InputMP3").value.toString();
               var source = document.getElementById("source");
               audio.addEventListener("ended", function(){
                    console.log(str);
@@ -57,7 +57,8 @@
                    if (list == true) {
                        var table = splitPlaylist(str);
                        var length = table.length;
-                           console.log(length);
+                       console.log(length);
+                       console.log(table);
                            if (length >= currentSong) {
                               source.src = table[currentSong];
                               console.log(table[currentSong]);
