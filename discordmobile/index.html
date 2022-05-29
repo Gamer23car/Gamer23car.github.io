@@ -102,6 +102,9 @@
                                while (true) {
                                     if (randomSong == last) {
                                         randomSong = getRandomInt(1, length);
+                                        if (randomSong ~= last) {
+                                            break;
+                                        }
                                     }
                                     else
                                     {
