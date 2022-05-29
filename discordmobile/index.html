@@ -11,6 +11,7 @@
             var shuffl = false;
             var randomSong = 0;
             var last = 0;
+            
             function mp3()
             {
                var str = document.getElementById("InputMP3").value;
@@ -33,11 +34,13 @@
                    audio.play();
                }
             }
+            
             function getRandomInt(min, max) {
                     min = Math.ceil(min);
                     max = Math.floor(max);
                     return Math.floor(Math.random() * (max - min + 1) + min);
             }
+            
             function loop() 
             {
                 var audio = document.getElementById("MP3");
@@ -46,6 +49,7 @@
                 else 
                 {audio.loop = false};
             }
+            
             function shuffle()
             {
                 if (shuffl == false)
@@ -63,6 +67,7 @@
                 else
                 {shuffl = false};
             }
+            
             function playlist()
             {
                 if (list == false)
@@ -77,11 +82,12 @@
                     }
                 };
             }
+            
             function splitPlaylist(txt)
             {
                 return txt.split(",")
             }
-            console.log(splitPlaylist("e,e,e,"));
+           
             window.onload=function(){
               var audio = document.getElementById("MP3");
               var source = document.getElementById("source");
@@ -92,7 +98,7 @@
                        var table = splitPlaylist(str);
                        var length = table.length;
                            if (shuffl == true) {
-                               randomSong = getRandomInt(1, length)
+                               randomSong = getRandomInt(1, length);
                                while (true) {
                                     if (randomSong == last) {
                                         randomSong = getRandomInt(1, length);
@@ -117,7 +123,8 @@
                                }
                                else
                                {
-                                   currentSong = 0
+                                   currentSong = 0;
+                                   last = 0;
                                    source.src = table[currentSong];
                                    audio.load();
                                    audio.play();
@@ -134,6 +141,7 @@
                   }
                });
             };
+            // hi
         </script>
     </head>
     <label><span>made by gamer23car</span></label>
