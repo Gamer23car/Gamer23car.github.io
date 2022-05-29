@@ -10,11 +10,13 @@
             var currentSong = 0;
             var shuffl = false;
             var randomSong = 0;
+            var last = 0;
             function mp3()
             {
                var str = document.getElementById("InputMP3").value;
                currentSong = 0;
                randomSong = 0;
+               last = 0;
                played = new Array();
                var audio = document.getElementById("MP3");
                var source = document.getElementById("source");
@@ -91,10 +93,19 @@
                        var length = table.length;
                            if (shuffl == true) {
                                randomSong = getRandomInt(1, length)
+                               while (true) {
+                                    if (randomSong == last);
+                                        randomSong = getRandomInt(1, length);
+                                    else
+                                    {
+                                        break;
+                                    }
+                               }
                                //played[randomSong] = true;
                                source.src = table[randomSong];
                                audio.load();
                                audio.play();
+                               last = randomSong;
                            }
                            else {
                                if (length > currentSong) {
