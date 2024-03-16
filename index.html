@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirect</title>
+    <script>
+        window.onload = function() {
+            // Get the current URL
+            var url = window.location.href;
+
+            // Find the index of "?q="
+            var index = url.indexOf("?q=");
+
+            // If "?q=" is found in the URL
+            if (index !== -1) {
+                // Extract the substring after "?q="
+                var redirectTo = url.substring(index + 3); // Adding 3 to skip "?q="
+
+                // Redirect the user to the extracted URL
+                window.location.href = redirectTo;
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Optional: You can provide a message to be displayed while redirecting -->
+    <p>Redirecting...</p>
+</body>
+</html>
