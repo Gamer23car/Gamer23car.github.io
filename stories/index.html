@@ -1,12 +1,19 @@
 <head>
   <title>short stories</title>
   <style>
-    body {
+    .background-image {
+      background-color: black;
+      position: relative;
+    }
+    .background-image::after {
       background-image: url('dots.png');
       background-repeat: no-repeat;
       background-attachment: fixed;
       background-size: cover;
-      background-color: black;
+      opacity: 0.5;
+      z-index: -1;
+    }
+    .main {
     }
     i {
       color: white;
@@ -23,9 +30,14 @@
   </style>
 </head>
 <body>
-  <h1>Stories</h1>
-    <i><b>A collection of small short stories I write. All of them are fictional, and are just my opinions!</b></i>
-   <br></br>
-  <! story links>
-  <a href="/stories/paint_me.html">> "Paint me" (july 3rd 2025)</a>
+  <div class="background-image">
+    <div class="main">
+      <h1>Stories</h1>
+        <i><b>A collection of small short stories I write. All of them are fictional or opinion pieces, and are.. just my opinions!</b></i>
+        <br></br>
+        <! story links>
+            <a href="/stories/paint_me.html">> "Paint me" (july 3rd 2025)</a>
+            <a href="/stories/random_garbage.html">> "Untitled" (may 13th 2025)</a>
+    </div>
+  </div>
 </body>
